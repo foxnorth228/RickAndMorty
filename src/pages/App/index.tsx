@@ -1,7 +1,15 @@
+import Header from '@layouts/Header';
 import React from 'react';
 
+import GlobalStyle from './styled';
+
 const App = () => {
-  return <h1>Hello world!</h1>;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+    </>
+  );
 };
 
 export default App;
