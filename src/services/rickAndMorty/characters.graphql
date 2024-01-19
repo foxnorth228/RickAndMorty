@@ -1,0 +1,12 @@
+query getAllCharacters($name: String = "") {
+    characters(page: 1, filter: { name: $name }) {
+        info {
+            pages
+        }
+        results {
+            name
+            status
+            gender
+        }
+    }
+}
