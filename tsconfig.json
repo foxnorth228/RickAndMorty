@@ -25,6 +25,6 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "types": ["node"],
   },
 }

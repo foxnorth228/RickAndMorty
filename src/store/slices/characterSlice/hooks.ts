@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@src/store';
-import { CharacterCommon } from '@services/rickAndMorty/types';
+import { ICharacterCommon } from '@services/rickAndMorty/queries/characters/types';
 import { setCharacters } from '@store/slices/characterSlice/index';
 
-export const useCharacters = () => {
+export const useStoreGetCharacters = () => {
   return useSelector((root: RootState) => root.characters);
 };
 
-export const useSetCharacters = () => {
+export const useStoreSetCharacters = () => {
   const dispatch = useDispatch();
-  return (characters: CharacterCommon[]) => dispatch(setCharacters(characters));
+  return (characters: ICharacterCommon[]) => dispatch(setCharacters(characters));
 }

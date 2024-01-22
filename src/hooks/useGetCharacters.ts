@@ -1,11 +1,10 @@
+import { useApiGetAllCharacters } from '@services/rickAndMorty/hooks';
+import { useStoreSetCharacters } from '@store/slices/characterSlice/hooks';
 import { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import getAllCharacters from '@services/rickAndMorty/characters.graphql';
-import { useSetCharacters } from '@store/slices/characterSlice/hooks';
 
 const useGetCharacters = () => {
-  const setCharacters = useSetCharacters();
-  const { loading, error, data } = useQuery(getAllCharacters);
+  const setCharacters = useStoreSetCharacters();
+  const { loading, error, data } = useApiGetAllCharacters();
 
   useEffect(() => {
     if (loading) {
@@ -18,8 +17,7 @@ const useGetCharacters = () => {
     if (error) {
       console.error(error);
     }
-  })
-  return null;
+  });
 };
 
 export default useGetCharacters;

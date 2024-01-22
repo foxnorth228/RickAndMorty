@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CharacterCommon } from '@services/rickAndMorty/types';
+import { ICharacterCommon } from '@services/rickAndMorty/queries/characters/types';
 import config from '@store/slices/characterSlice/config';
 
 const characterSlice = createSlice({
   name: config.name,
   initialState: config.initialValue,
   reducers: {
-    setCharacters: (_, action: PayloadAction<CharacterCommon[]>) => {
+    setCharacters: (_, action: PayloadAction<ICharacterCommon[]>) => {
       return action.payload;
     },
   },

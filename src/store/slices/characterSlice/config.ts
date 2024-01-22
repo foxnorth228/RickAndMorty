@@ -1,10 +1,10 @@
-import { CharacterCommon } from '@services/rickAndMorty/types';
+import { ICharacterCommon } from '@services/rickAndMorty/queries/characters/types';
 
 export const characterName = 'characters';
 
 const config = {
   name: characterName,
-  initialValue: [] as CharacterCommon[],
+  initialValue: [] as ICharacterCommon[],
 };
 
 export default config;
