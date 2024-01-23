@@ -5,4 +5,5 @@ export const StyledHeader = styled.header`
   min-height: 130px;
   background: linear-gradient(#13142d 0%, rgb(31, 32, 68) 100%);
   display: flex;
+  grid-area: head;
 `;

@@ -1,7 +1,7 @@
-import React from 'react';
 import CardCharacter from '@components/CardCharacter';
-import { useStoreGetCharacters } from '@store/slices/characterSlice/hooks';
 import { StyledCardList } from '@layouts/CardList/styled';
+import { useStoreGetCharacters } from '@store/slices/characterSlice/hooks';
+import React from 'react';
 
 const CardList = () => {
   const characters = useStoreGetCharacters();

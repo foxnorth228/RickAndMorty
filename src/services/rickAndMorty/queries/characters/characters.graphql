@@ -1,5 +1,5 @@
-query getAllCharacters($name: String = "") {
-    characters(page: 1, filter: { name: $name }) {
+query getAllCharacters($name: String = "", $status: String = "", $species: String = "", $type: String = "", $gender: String = "") {
+    characters(page: 1, filter: { name: $name, status: $status, species: $species, type: $type, gender: $gender }) {
         info {
             pages
         }

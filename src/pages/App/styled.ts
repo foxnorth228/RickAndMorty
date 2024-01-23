@@ -49,7 +49,9 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100svh;
         height: 100%;
         display: grid;
-        grid-template: min-content 1fr / 1fr;
+        grid-template-areas: "head head" "filter card";
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: minmax(200px, 20vw) 1fr;
     }
 `;
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import { ICharacterCommon } from '@services/rickAndMorty/queries/characters/types';
-import { StyledCardCharacter, StyledDescription, StyledImage } from '@components/CardCharacter/styled';
+import {
+  StyledCardCharacter,
+  StyledDescription,
+  StyledImage,
+} from '@components/CardCharacter/styled';
 
 const CardCharacter = ({ name, gender, status, image }: ICharacterCommon) => {
   return (
