@@ -6,15 +6,17 @@ export interface ICharacterCommon {
   id: number;
 }
 
-export interface ICharacterFull extends ICharacterCommon{
+export interface ICharacterLocation {
+  name: string;
+  type: string;
+  dimension: string;
+}
+
+export interface ICharacterFull extends ICharacterCommon {
   species: string;
   type: string;
-  origin: {
-    name: string;
-  };
-  location: {
-    name: string;
-  };
+  origin: ICharacterLocation;
+  location: ICharacterLocation;
 }
 
 export interface IResponseCharacter {

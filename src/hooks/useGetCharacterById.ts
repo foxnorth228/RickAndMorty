@@ -1,15 +1,22 @@
 import { useApiGetCharacterById } from '@services/rickAndMorty/hooks';
 import { useEffect, useState } from 'react';
+import { ICharacterFull } from '@services/rickAndMorty/queries/characters/types';
 
 const useGetCharacterById = (id: number) => {
-  const [info, setInfo] = useState(null);
-  const { loading, error, data } = useApiGetCharacterById({ variables: { id } });
+  const [info, setInfo] = useState<ICharacterFull | null>(null);
+  const [oldId, setOldId] = useState(id);
+  const { loading, error, data } = useApiGetCharacterById({
+    variables: { id },
+    skip: oldId === id,
+  });
+  useEffect(() => {
+    setOldId(id);
+  }, [id]);
   useEffect(() => {
     if (loading) {
       console.log('Loading...');
     }
     if (data) {
-      console.log(data);
       setInfo(data);
     }
     if (error) {

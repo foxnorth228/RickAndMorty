@@ -5,7 +5,7 @@ import useGetCharacterById from '@hooks/useGetCharacterById';
 
 const PopupCharacter = () => {
   const [selectedCharacter, setSelectedCharacter] = useContextSelectedCharacter();
-  useGetCharacterById(selectedCharacter);
+  const data = useGetCharacterById(selectedCharacter);
   const resetSelectedCharacter = useCallback(
     () => {
     setSelectedCharacter(-1);
