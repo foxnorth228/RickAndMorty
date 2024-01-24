@@ -3,7 +3,18 @@ export interface ICharacterCommon {
   status: string;
   gender: string;
   image: string;
-  id: string;
+  id: number;
+}
+
+export interface ICharacterFull extends ICharacterCommon{
+  species: string;
+  type: string;
+  origin: {
+    name: string;
+  };
+  location: {
+    name: string;
+  };
 }
 
 export interface IResponseCharacter {

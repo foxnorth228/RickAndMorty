@@ -7,6 +7,7 @@ const characterSlice = createSlice({
   initialState: config.initialValue,
   reducers: {
     setCharacters: (_, action: PayloadAction<ICharacterCommon[]>) => {
+      action.payload = action.payload.map((el) => ({ ...el, id: Number(el.id) }));
       return action.payload;
     },
   },
