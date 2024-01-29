@@ -9,5 +9,5 @@ export const useStoreGetCharacters = () => {
 
 export const useStoreSetCharacters = () => {
   const dispatch = useDispatch();
-  return (characters: ICharacterCommon[]) => dispatch(setCharacters(characters));
+  return (payload: [ICharacterCommon[], number]) => dispatch(setCharacters(payload));
 };

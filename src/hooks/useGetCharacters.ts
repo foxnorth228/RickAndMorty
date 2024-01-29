@@ -1,26 +1,27 @@
 import { useApiGetAllCharacters } from '@services/rickAndMorty/hooks';
 import { useStoreSetCharacters } from '@store/slices/characterSlice/hooks';
 import { useStoreGetFilter } from '@store/slices/filterSlice/hooks';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import useContextPage from '@hooks/useContextPage';
 
 const useGetCharacters = () => {
   const filter = useStoreGetFilter();
   const [oldFilter, setOldFilter] = useState('');
   const setCharacters = useStoreSetCharacters();
-  const { loading, error, data } = useApiGetAllCharacters({
+  const [page] = useContextPage();
+  const { error, data } = useApiGetAllCharacters({
     variables: {
       ...filter,
+      page,
     },
     skip: oldFilter === JSON.stringify(filter),
   });
-
+  useLayoutEffect(() => {
+    setOldFilter('');
+  }, [page]);
   useEffect(() => {
-    if (loading) {
-      console.log('Loading...');
-    }
     if (data) {
-      console.log(data);
-      setCharacters(data.characters.results);
+      setCharacters([data.characters.results, page]);
       const str = JSON.stringify(filter);
       if (oldFilter !== str) {
         setOldFilter(str);
@@ -29,7 +30,7 @@ const useGetCharacters = () => {
     if (error) {
       console.error(error);
     }
-  }, [data, error, filter, loading, oldFilter, setCharacters]);
+  }, [data, error, filter, oldFilter, page]);
 };
 
 export default useGetCharacters;
