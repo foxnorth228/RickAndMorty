@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { characterName } from '@store/slices/characterSlice/config';
 import characterSlice from '@store/slices/characterSlice';
-import { filterSliceName } from '@store/slices/filterSlice/config';
+import { characterName } from '@store/slices/characterSlice/config';
 import filterSlice from '@store/slices/filterSlice';
+import { filterSliceName } from '@store/slices/filterSlice/config';
 
 export const store = configureStore({
   reducer: {

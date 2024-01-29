@@ -7,4 +7,5 @@ export const StyledCardList = styled.main`
   margin: 16px;
   grid-column-gap: 0.9em;
   grid-row-gap: 1.6em;
+    overflow-y: auto;
 `;

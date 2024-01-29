@@ -7,8 +7,7 @@ export const StyledCardCharacter = styled.article`
   border: 1px solid #d8d8d8;
 `;
 
-export const StyledImage = styled.img`
-`;
+export const StyledImage = styled.img``;
 
 export const StyledDescription = styled.p`
   font-family: 'Roboto', Arial, Helvetica, sans-serif;

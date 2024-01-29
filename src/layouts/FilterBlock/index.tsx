@@ -1,8 +1,8 @@
-import React from 'react';
+import InputFilter from '@components/InputFilter';
 import { StyledDivSticky, StyledFilterBlock } from '@layouts/FilterBlock/styled';
 import { useStoreGetFilter } from '@store/slices/filterSlice/hooks';
-import InputFilter from '@components/InputFilter';
 import { IFilter } from '@store/slices/filterSlice/types';
+import React from 'react';
 
 export const FilterBlock = () => {
   const filter = useStoreGetFilter();

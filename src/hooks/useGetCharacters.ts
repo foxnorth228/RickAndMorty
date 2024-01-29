@@ -1,7 +1,7 @@
 import { useApiGetAllCharacters } from '@services/rickAndMorty/hooks';
 import { useStoreSetCharacters } from '@store/slices/characterSlice/hooks';
-import { useEffect, useState } from 'react';
 import { useStoreGetFilter } from '@store/slices/filterSlice/hooks';
+import { useEffect, useState } from 'react';
 
 const useGetCharacters = () => {
   const filter = useStoreGetFilter();

@@ -19,6 +19,10 @@ export interface ICharacterFull extends ICharacterCommon {
   location: ICharacterLocation;
 }
 
+export interface IResponseCharacterId {
+  character: ICharacterFull;
+}
+
 export interface IResponseCharacter {
   characters: {
     info: {
