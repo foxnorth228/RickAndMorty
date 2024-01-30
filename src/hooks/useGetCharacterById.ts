@@ -4,21 +4,17 @@ import { useEffect, useState } from 'react';
 
 const useGetCharacterById = (id: number) => {
   const [info, setInfo] = useState<IResponseCharacterId | { character: null } | null>(null);
-  const { loading, error, data } = useApiGetCharacterById({
+  const { error, data } = useApiGetCharacterById({
     variables: { id },
   });
-  console.log('call', info, data);
   useEffect(() => {
-    if (loading) {
-      console.log('Loading...');
-    }
     if (data) {
       setInfo(data);
     }
     if (error) {
       console.error(error);
     }
-  }, [data, error, loading]);
+  }, [data, error]);
   return info && info.character;
 };
 

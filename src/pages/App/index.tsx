@@ -13,7 +13,6 @@ const App = () => {
   const matches = useMatchMedia('screen and (max-width: 600px)');
   const [selectedCharacter, setSelectedCharacter] = useState(-1);
   const [selectedPage, setSelectedPage] = useState(1);
-  console.log(selectedPage);
   return (
     <ContextSelectedCharacter.Provider value={[selectedCharacter, setSelectedCharacter]}>
       <ContextPage.Provider value={[selectedPage, setSelectedPage]}>
