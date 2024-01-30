@@ -25,7 +25,7 @@ const CardCharacter = ({ name, gender, status, image, id }: ICharacterCommon) =>
         </StyledCardCharacter>
       ) : (
         <StyledCardCharacter onClick={onSetSelectedCharacter}>
-          <StyledImage src={image} alt={name} width={300} height={300} />
+          <StyledImage loading="lazy" src={image} alt={name} width={300} height={300} />
           <StyledDescription>Name: {name}</StyledDescription>
           <StyledDescription>Gender: {gender}</StyledDescription>
           <StyledDescription>Status: {status}</StyledDescription>
