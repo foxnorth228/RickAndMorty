@@ -1,13 +1,16 @@
 import { styled } from 'styled-components';
 
 export const StyledCardCharacter = styled.article`
-  width: 300px;
+  width: 100%;
   max-width: 300px;
   background-color: rgb(244, 244, 244, 0.5);
   border: 1px solid #d8d8d8;
 `;
 
-export const StyledImage = styled.img``;
+export const StyledImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
 
 export const StyledDescription = styled.p`
   font-family: 'Roboto', Arial, Helvetica, sans-serif;

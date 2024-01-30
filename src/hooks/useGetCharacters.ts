@@ -1,8 +1,8 @@
+import useContextPage from '@hooks/useContextPage';
 import { useApiGetAllCharacters } from '@services/rickAndMorty/hooks';
 import { useStoreSetCharacters } from '@store/slices/characterSlice/hooks';
 import { useStoreGetFilter } from '@store/slices/filterSlice/hooks';
 import { useEffect, useLayoutEffect, useState } from 'react';
-import useContextPage from '@hooks/useContextPage';
 
 const useGetCharacters = () => {
   const filter = useStoreGetFilter();

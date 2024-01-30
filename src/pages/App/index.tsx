@@ -1,3 +1,4 @@
+import useMatchMedia from '@hooks/useMatchMedia';
 import CardList from '@layouts/CardList';
 import FilterBlock from '@layouts/FilterBlock';
 import Header from '@layouts/Header';
@@ -9,9 +10,10 @@ import React, { useState } from 'react';
 import GlobalStyle from './styled';
 
 const App = () => {
+  const matches = useMatchMedia('screen and (max-width: 600px)');
   const [selectedCharacter, setSelectedCharacter] = useState(-1);
   const [selectedPage, setSelectedPage] = useState(1);
-  console.log(selectedPage)
+  console.log(selectedPage);
   return (
     <ContextSelectedCharacter.Provider value={[selectedCharacter, setSelectedCharacter]}>
       <ContextPage.Provider value={[selectedPage, setSelectedPage]}>
@@ -19,7 +21,7 @@ const App = () => {
           <PopupCharacter />
           <GlobalStyle />
           <Header />
-          <FilterBlock />
+          <FilterBlock matches={matches} style={{ position: matches ? 'fixed' : '' }} />
           <CardList />
         </div>
       </ContextPage.Provider>

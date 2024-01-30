@@ -6,4 +6,9 @@ export const StyledHeader = styled.header`
   background: linear-gradient(#13142d 0%, rgb(31, 32, 68) 100%);
   display: flex;
   grid-area: head;
+  @media screen and (max-width: 600px) {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
 `;

@@ -1,8 +1,8 @@
 import { StyledInputFilter, StyledLabel } from '@components/InputFilter/styled';
 import { IInputFilter } from '@components/InputFilter/types';
+import useContextPage from '@hooks/useContextPage';
 import { useStoreChangeFilter } from '@store/slices/filterSlice/hooks';
 import React, { useCallback } from 'react';
-import useContextPage from '@hooks/useContextPage';
 
 const InputFilter = ({ filter: { key, value } }: IInputFilter) => {
   const [, setPage] = useContextPage();

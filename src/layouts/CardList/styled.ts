@@ -8,4 +8,7 @@ export const StyledCardList = styled.main`
   grid-column-gap: 0.9em;
   grid-row-gap: 1.6em;
   overflow-y: auto;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
